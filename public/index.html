@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Use For Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Use For Material Iconic Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <!-- Use For Simple Line Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" />
+    <!-- Use For Leaflet Map -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.1.0/leaflet.css" />
+    <!-- Use For Jvector Map -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.4/jquery-jvectormap.css" type="text/css"
+        media="screen" />
+    <!-- Use For Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Heebo:100,300,400,500,700,800,900" rel="stylesheet">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Chameleon</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+    <!-- Default Statcounter code for Chameleon Admin
+https://chameleon.love/admin -->
+<script type="text/javascript">
+  var sc_project=12120176; 
+  var sc_invisible=1; 
+  var sc_security="42d4216a"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="https://c.statcounter.com/12120176/0/42d4216a/1/"
+  alt="Web Analytics"></a></div></noscript>
+  <!-- End of Statcounter Code -->
+  <style type="text/css">
+    
+    .preloader{
+        position:fixed !important;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        z-index:10000
+    }
+    .preloader:before,.preloader:after{
+        position:absolute;
+        left:0;
+        height:51%;
+        width:100%;
+        transition:all .6s ease .3s;
+        background:#fff;
+        content:''
+    }
+    .preloader:before{
+        top:0
+    }
+    .page-loaded .preloader:before{
+        transform:translate(0, -100%)
+    }
+    .preloader:after{
+        bottom:0
+    }
+    .page-loaded .preloader:after{
+        transform:translate(0, 100%)
+    }
+    .preloader.preloader-dalas:before,.preloader.preloader-dalas:after{
+        background:#141315
+    }
+    .preloader.preloader-florida:before,.preloader.preloader-florida:after{
+        background:#6838ca
+    }
+    .preloader.preloader-texas:before,.preloader.preloader-texas:after{
+        background:#303150
+    }
+    .preloader.preloader-jackson:before,.preloader.preloader-jackson:after{
+        background:#010103
+    }
+    .page-loaded .preloader.no-split:before,.page-loaded .preloader.no-split:after{
+        transform:translate(0, 0)
+    }
+    .spinner{
+        display:block;
+        position:relative;
+        left:50%;
+        top:50%;
+        width:70px;
+        height:70px;
+        margin:-35px 0 0 -35px;
+        z-index:1001
+    }
+    .spinner-round{
+        border-radius:50%;
+        border:2px solid transparent;
+        border-top-color:#ff4157;
+        animation:spin 2s linear infinite
+    }
+    .spinner-round:before,.spinner-round:after{
+        content:"";
+        position:absolute;
+        border-radius:50%;
+        border:3px solid transparent
+    }
+    .spinner-round:before{
+        top:5px;
+        left:5px;
+        right:5px;
+        bottom:5px;
+        border-top-color:#271149;
+        animation:spin 3s linear infinite
+    }
+    .spinner-round:after{
+        top:15px;
+        left:15px;
+        right:15px;
+        bottom:15px;
+        border-top-color:#ff4157;
+        animation:spin 1.5s linear infinite
+    }
+    .spinner-alt{
+        border-radius:50%;
+        width:150px;
+        height:150px
+    }
+    .spinner-alt:before,.spinner-alt:after{
+        content:"";
+        position:absolute;
+        border-radius:50%;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0
+    }
+    .spinner-alt:before{
+        border:1px solid rgba(255,255,255,0.1)
+    }
+    .spinner-alt:after{
+        border:1px solid;
+        border-top-color:#fff;
+        border-right-color:transparent;
+        border-left-width:0;
+        border-bottom-width:0;
+        animation:spin 1.5s linear infinite
+    }
+    .spinner-alt.load-done{
+        transition:all .4s;
+        transform:scale(3);
+        opacity:0;
+        border-color:transparent
+    }
+    .spinner-alt.load-done:before,.spinner-alt.load-done:after{
+        opacity:0
+    }
+    .spinner-alt.spinner-light{
+        border:1px solid rgba(10,16,21,0.1)
+    }
+    .spinner-alt.spinner-light::after{
+        border-top-color:#0a1015
+    }
+    .spinner-brand{
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%, -50%);
+        width:100px
+    }
+    @keyframes spin{
+        0%{
+            -webkit-transform:rotate(0deg);
+            -ms-transform:rotate(0deg);
+            transform:rotate(0deg)
+        }
+        100%{
+            -webkit-transform:rotate(360deg);
+            -ms-transform:rotate(360deg);
+            transform:rotate(360deg)
+        }
+    }
+    .animate{
+        position:relative;
+        animation-fill-mode:both
+    }
+    @keyframes fade-in-up{
+        from{
+            top:50px;
+            opacity:0
+        }
+        to{
+            top:0;
+            opacity:1
+        }
+    }
+    .slick-active .fade-in-up{
+        animation:fade-in-up .8s
+    }
+    @keyframes fade-in-bottom{
+        from{
+            bottom:50px;
+            opacity:0
+        }
+        to{
+            bottom:0;
+            opacity:1
+        }
+    }
+    .slick-active .fade-in-bottom{
+        animation:fade-in-bottom .8s
+    }
+    @keyframes fade-in-left{
+        from{
+            right:50px;
+            opacity:0
+        }
+        to{
+            right:0;
+            opacity:1
+        }
+    }
+    .slick-active .fade-in-left{
+        animation:fade-in-left .8s
+    }
+    @keyframes fade-in-right{
+        from{
+            left:50px;
+            opacity:0
+        }
+        to{
+            left:0;
+            opacity:1
+        }
+    }
+       </style>
+       <script>
+
+
+    function handleScroll(e)  {
+        $('#backToTop').fadeIn();
+      }
+       </script>
+</head>
+
+<body onWheel="handleScroll(this)">
+    <div  class="preloader loader preloader-dark preloader-dalas no-split"><span class="spinner spinner-alt">
+      <img class="spinner-brand" src="logo-white.png" alt=""></span></div>
+<!-- <div class="loader"></div> -->
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+
+
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+ 
+</body >
+<script ></script>
+
+ <!-- <script src="../src/assets/page-assets/bundle.js.download"></script> -->
+<!-- <script src="https://checkout.stripe.com/checkout.js"></script> -->
+
+<script src="https://chameleon.love/public/js/jquery.bundle.js"></script>
+</html>

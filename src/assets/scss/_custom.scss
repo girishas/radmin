@@ -1,0 +1,39 @@
+/*====== All Custom Files Include Here ======*/
+@import "./custom/common";
+@import "./custom/header";
+@import "./custom/sidebar";
+@import "./custom/horizontal-menu";
+@import "./custom/agency-layout";
+@import "./custom/main";
+@import "./custom/dashboard";
+@import "./custom/ul-element";
+@import "./custom/advance-ui-element";
+@import "./custom/forms";
+@import "./custom/tables";
+@import "./custom/editor";
+@import "./custom/drag-drop";
+@import "./custom/pages";
+@import "./custom/user";
+@import "./custom/ecommerce";
+@import "./custom/session";
+@import "./custom/effect";
+@import "./custom/widgets";
+@import "./custom/extensions";
+
+
+// @media (max-width: 836px){
+// 	.navbar-left > li:nth-of-type(2), .navbar-right > li:last-child {
+// 		display:  inline-block;
+// 	}
+//   }
+// @media (max-width: 350px){
+// 	.navbar-left > li:nth-of-type(2), .navbar-right > li:last-child {
+// 		display:  inline-block;
+// 	}
+//   }
+
+  @media (max-width: 472px){
+        .navbar-right > li:nth-of-type(2) {
+            display: inline-block;
+        }
+  }
